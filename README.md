@@ -15,7 +15,7 @@
 
 package.json如下：
 
-```java
+```json
   "scripts": {
     "build-css": "node-sass-chokidar src/assets/sass -o src/assets/css",
     "watch-css": "npm run build-css && node-sass-chokidar src/assets/sass -o src/assets/css --watch --recursive",
@@ -29,6 +29,16 @@ package.json如下：
 ```
 
 [配置方法](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+
+
+### 配置代理到node层
+```json
+ "proxy": {
+    "/api": {
+      "target": "http://localhost:4222/"
+    }
+  }
+```
 
 ### 问题及方案
 
