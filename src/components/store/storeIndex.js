@@ -14,8 +14,7 @@ export default class StoreIndex extends React.Component {
 
     //第一次渲染结束
     componentDidMount() {
-        console.log(123);
-        // this.getData('/api/productSve/getProducts')
+        console.log('获取商品列表');
         fetch.getFetch('/api/productSve/getProducts')
             .then(data => {
                 console.log(data)
@@ -24,28 +23,7 @@ export default class StoreIndex extends React.Component {
                 console.log(err)
             })
     }
-
-    getData(url) {
-        this.getFetch(url)
-			.then(data => {
-				console.log(data)
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
-
-    getFetch(url) {
-        return fetch(url).then(res => {
-            if (res.status !== 200) {
-                console.log('Looks like there was a problem. Status Code: ' + res.status)
-                return
-            }
-            console.log(res)
-            return res.json()
-        })
-    }
-
+	
 	render() {
 		return (
 			<div className="shop">
